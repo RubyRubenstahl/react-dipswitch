@@ -69,7 +69,8 @@ npm install react-dipswitch
 ## TO DO
 * Allow for switches to be inverted for cases where "on" is down. 
 * Allow for for height to be set instead of width or width+height for custom scaling. 
-
+* Allow for value to be supplied as an array of truthy/falsy values
+* Allow for vlue to be output as an array of true/false
 
 ## License
 
