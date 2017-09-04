@@ -1,0 +1,26 @@
+{
+  "name": "react-dipswitch",
+  "version": "0.1.0",
+  "description": "An interactive & customizable Dipswitch component for react.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RubyRubenstahl/react-dipswitch.git"
+  },
+  "keywords": [
+    "react",
+    "dipswitch",
+    "component",
+    "lighting",
+    "switch"
+  ],
+  "author": "Ruby Rubenstahl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RubyRubenstahl/react-dipswitch/issues"
+  },
+  "homepage": "https://github.com/RubyRubenstahl/react-dipswitch#readme"
+}
