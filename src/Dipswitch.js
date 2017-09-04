@@ -46,14 +46,7 @@ class Dipswitch extends Component {
       const s = (
           <Switch
               key={i}
-              label={i + 1}
-              onClick={this.onSwitchClick(i)}
-              on={switchState}
-              width={switchWidth}
-              switchColor={switchColor}
-              channelColor={channelColor}
-              bodyColor={bodyColor}
-              labelColor={labelColor}
+
           />);
       switches.push(s);
     })
@@ -64,6 +57,17 @@ class Dipswitch extends Component {
         </div>);
   }
 }
+
+/*
+              label={i + 1}
+              onClick={this.onSwitchClick(i)}
+              on={switchState}
+              width={switchWidth}
+              switchColor={switchColor}
+              channelColor={channelColor}
+              bodyColor={bodyColor}
+              labelColor={labelColor}
+ */
 
 Dipswitch.PropTypes = {
   switchCount: PropTypes.number.isRequired,
