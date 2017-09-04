@@ -1,6 +1,6 @@
 {
   "name": "react-dipswitch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An interactive & customizable Dipswitch component for react.",
   "main": "index.js",
   "scripts": {
