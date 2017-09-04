@@ -10,7 +10,7 @@ The component takes the following props.
 | `switchCount`     | _number_   | The number of switches available on the dipswitch |
 | `value`           | _number_   | The integer value of the dipswitch. The dipswitch will display this value in binary. |
 | `width`           | _number_   | Width of the dipswitch housing. The height will be scaled automatically based on this value |
-| `msb`             | _string_   | If `left` (default) the most significant bit will be on the left side of the dipswitch, if `right`, it will display on the right side. |
+| `msb`             | _string_   | If `left` (default) the most significant bit will be on the left side of the dipswitch. If `right`, it will display on the right side. |
 | `onValueChange`   | _funciton_ | Callback function to invoke when the value of the switch has changed. Function signature is `function(value){}`. |
 | `onSwitchClick`   | _funciton_ | Callback function to invoke when a switch has been clicked. Function signature is `function(index){}` The index of the least significant bit is always 0. |
 | `switchColor`     | _string_   | Color of the switch. |
@@ -28,10 +28,43 @@ npm install react-dipswitch
 
 If you want the default styling, include the component's [CSS](./style.css) with
 
+### Basic Example
 ```javascript
-import "react-toggle/style.css" // for ES6 modules
-// or
-require("react-toggle/style.css") // for CommonJS
+    <Dipswitch switchCount={4} value={16}/>
+```
+
+### Controlled Example
+```javascript
+    import React, { Component } from 'react';
+    import Dipswitch from 'react-dipswitch';
+    
+    class ControlledDipswitch extends Component {
+      constructor(props) {
+        super();
+        this.state={value: 127}
+        this.onValueChange = this.onValueChange.bind(this);
+      }
+    
+      onValueChange(value){
+        this.setState({value});
+      }
+    
+      render(){
+        return(
+            <div>
+              <Dipswitch
+                  switchCount="8"
+                  value={this.state.value}
+                  onValueChange={this.onValueChange}
+                  width="100"
+              />
+              {this.state.value}
+            </div>
+        );
+      }
+    }
+    
+    export default ControlledDipswitch;
 ```
 
 ## Development
