@@ -23,7 +23,7 @@
     "url": "https://github.com/RubyRubenstahl/react-dipswitch/issues"
   },
   "homepage": "https://github.com/RubyRubenstahl/react-dipswitch#readme",
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1"
   }
