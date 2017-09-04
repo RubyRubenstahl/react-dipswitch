@@ -1,5 +1,6 @@
 An interactive, customizable, SVG-based dipswitch component for react. 
 
+<img src="https://i.imgur.com/aZrFGGz.png"/>
 
 ## Props
 
@@ -25,8 +26,6 @@ npm install react-dipswitch
 ```
 
 ## Usage
-
-If you want the default styling, include the component's [CSS](./style.css) with
 
 ### Basic Example
 ```javascript
@@ -67,18 +66,10 @@ If you want the default styling, include the component's [CSS](./style.css) with
     export default ControlledDipswitch;
 ```
 
-## Development
+## TO DO
+* Allow for switches to be inverted for cases where "on" is down. 
+* Allow for for height to be set instead of width or width+height for custom scaling. 
 
-```javascript
-npm install
-npm run dev
-```
-
-## Build
-
-```javascript
-npm run build
-```
 
 ## License
 
