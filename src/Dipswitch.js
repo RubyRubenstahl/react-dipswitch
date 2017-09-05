@@ -31,7 +31,7 @@ class Dipswitch extends Component {
     let switches = [];
     const { switchCount = 8,
       value = 0,
-      msb = 'left',
+      msb = 'right',
       width = 128,
       switchColor,
       channelColor,
