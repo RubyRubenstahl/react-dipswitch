@@ -54,9 +54,10 @@ class Dipswitch extends Component {
               switchColor={switchColor}
               channelColor={channelColor}
               bodyColor={bodyColor}
+              labelColor={labelColor}
           />);
       switches.push(s);
-    })
+    });
 
     return (
         <div>
@@ -76,19 +77,19 @@ Dipswitch.PropTypes = {
   channelColor: PropTypes.string,
   bodyColor: PropTypes.string,
   labelColor: PropTypes.string,
-}
+};
 
 
 const msbRightIterator = (count, fn) => {
   for (let i = 0; i < count; i++) {
     fn(i);
   }
-}
+};
 
 const msbLeftIterator = (count, fn) => {
   for (let i = count - 1; i >= 0; i--) {
     fn(i);
   }
-}
+};
 
 export default Dipswitch;

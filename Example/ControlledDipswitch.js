@@ -4,7 +4,7 @@ import Dipswitch from '../src/Dipswitch';
 class ControlledDipswitch extends Component {
   constructor(props) {
     super();
-    this.state={value: 127}
+    this.state={value: 127};
     this.onValueChange = this.onValueChange.bind(this);
   }
 
