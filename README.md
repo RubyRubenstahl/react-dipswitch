@@ -2,7 +2,7 @@ An interactive, customizable, SVG-based dipswitch component for react.
 
 <img src="https://i.imgur.com/aZrFGGz.png"/>
 
-[Live Demo](https://84q35m2430.codesandbox.io/)
+[Live Demo](https://codesandbox.io/s/84q35m2430)
 
 ## Props
 
