@@ -61,7 +61,7 @@ class Dipswitch extends Component {
 
     iterator(switchCount, i => {
       const switchState = Math.pow(2, i) & value;
-      const s = (
+      const singleSwitch = (
         <Switch
           key={i}
           label={i + 1}
@@ -74,7 +74,7 @@ class Dipswitch extends Component {
           labelColor={labelColor}
         />
       );
-      switches.push(s);
+      switches.push(singleSwitch);
     });
 
     return <div>{switches}</div>;
