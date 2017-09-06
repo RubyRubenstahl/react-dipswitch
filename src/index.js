@@ -1,3 +1,3 @@
-import Dipswitch from './Dipswitch';
+import Dipswitch from "./Dipswitch";
 
 export default Dipswitch;

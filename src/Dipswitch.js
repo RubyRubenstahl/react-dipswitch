@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Switch from './Switch';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Switch from "./Switch";
 
 class Dipswitch extends Component {
   constructor(props) {
@@ -13,15 +13,15 @@ class Dipswitch extends Component {
     return () => {
       this.onValueChange(index);
       const { onClick } = this.props;
-      if (typeof onClick === 'function') {
+      if (typeof onClick === "function") {
         this.props.onClick(index);
       }
-    }
+    };
   }
 
   onValueChange(index) {
     const { onValueChange } = this.props;
-    if (typeof onValueChange === 'function') {
+    if (typeof onValueChange === "function") {
       const newVal = this.props.value ^ Math.pow(2, index);
       onValueChange(newVal);
     }
@@ -29,9 +29,10 @@ class Dipswitch extends Component {
 
   render() {
     let switches = [];
-    const { switchCount = 8,
+    const {
+      switchCount = 8,
       value = 0,
-      msb = 'right',
+      msb = "right",
       width = 128,
       switchColor,
       channelColor,
@@ -39,30 +40,29 @@ class Dipswitch extends Component {
       labelColor
     } = this.props;
 
-    const iterator = msb.toLowerCase() === 'right' ? msbRightIterator : msbLeftIterator;
+    const iterator =
+      msb.toLowerCase() === "right" ? msbRightIterator : msbLeftIterator;
     const switchWidth = width / switchCount;
 
     iterator(switchCount, i => {
       const switchState = Math.pow(2, i) & value;
       const s = (
-          <Switch
-              key={i}
-              label={i + 1}
-              onClick={this.onSwitchClick(i)}
-              on={switchState}
-              width={switchWidth}
-              switchColor={switchColor}
-              channelColor={channelColor}
-              bodyColor={bodyColor}
-              labelColor={labelColor}
-          />);
+        <Switch
+          key={i}
+          label={i + 1}
+          onClick={this.onSwitchClick(i)}
+          on={switchState}
+          width={switchWidth}
+          switchColor={switchColor}
+          channelColor={channelColor}
+          bodyColor={bodyColor}
+          labelColor={labelColor}
+        />
+      );
       switches.push(s);
     });
 
-    return (
-        <div>
-          {switches}
-        </div>);
+    return <div>{switches}</div>;
   }
 }
 
@@ -70,15 +70,14 @@ Dipswitch.PropTypes = {
   switchCount: PropTypes.number.isRequired,
   value: PropTypes.number,
   width: PropTypes.number,
-  msb: PropTypes.oneOf(['left', 'right']),
+  msb: PropTypes.oneOf(["left", "right"]),
   onValueChange: PropTypes.func,
   onSwitchClick: PropTypes.func,
   switchColor: PropTypes.string,
   channelColor: PropTypes.string,
   bodyColor: PropTypes.string,
-  labelColor: PropTypes.string,
+  labelColor: PropTypes.string
 };
-
 
 const msbRightIterator = (count, fn) => {
   for (let i = 0; i < count; i++) {
