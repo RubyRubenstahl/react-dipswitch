@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 
 const Switch = (props) => {
@@ -25,5 +27,18 @@ const Switch = (props) => {
       </svg>
   )
 };
+
+Switch.PropTypes = {
+  on: PropTypes.bool,
+  width: PropTypes.number,
+  onClick: PropTypes.func,
+  switchColor: PropTypes.string,
+  channelColor: PropTypes.string,
+  labelColor: PropTypes.string,
+  label: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ])
+}
 
 export default Switch;
