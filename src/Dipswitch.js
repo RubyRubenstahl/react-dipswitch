@@ -32,7 +32,7 @@ class Dipswitch extends Component {
     const {
       switchCount = 8,
       value = 0,
-      msb = "right",
+      mostSignificantBit = "right",
       width = 128,
       switchColor,
       channelColor,
@@ -41,7 +41,7 @@ class Dipswitch extends Component {
     } = this.props;
 
     const iterator =
-      msb.toLowerCase() === "right" ? msbRightIterator : msbLeftIterator;
+        mostSignificantBit.toLowerCase() === "right" ? msbRightIterator : msbLeftIterator;
     const switchWidth = width / switchCount;
 
     iterator(switchCount, i => {
@@ -70,7 +70,7 @@ Dipswitch.PropTypes = {
   switchCount: PropTypes.number.isRequired,
   value: PropTypes.number,
   width: PropTypes.number,
-  msb: PropTypes.oneOf(["left", "right"]),
+  mostSignificantBit: PropTypes.oneOf(["left", "right"]),
   onValueChange: PropTypes.func,
   onSwitchClick: PropTypes.func,
   switchColor: PropTypes.string,
