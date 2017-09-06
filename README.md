@@ -36,31 +36,31 @@ npm install react-dipswitch
 
 ### Controlled Example
 ```javascript
-    import React, { Component } from 'react';
-    import Dipswitch from 'react-dipswitch';
+    import React, { Component } from "react";
+    import Dipswitch from "react-dipswitch";
     
     class ControlledDipswitch extends Component {
       constructor(props) {
         super();
-        this.state={value: 127}
+        this.state = { value: 127 };
         this.onValueChange = this.onValueChange.bind(this);
       }
     
-      onValueChange(value){
-        this.setState({value});
+      onValueChange(value) {
+        this.setState({ value });
       }
     
-      render(){
-        return(
-            <div>
-              <Dipswitch
-                  switchCount="8"
-                  value={this.state.value}
-                  onValueChange={this.onValueChange}
-                  width="100"
-              />
-              {this.state.value}
-            </div>
+      render() {
+        return (
+          <div>
+            <Dipswitch
+              switchCount={8}
+              value={this.state.value}
+              onValueChange={this.onValueChange}
+              width={100}
+            />
+            {this.state.value}
+          </div>
         );
       }
     }
