@@ -40,6 +40,10 @@ class Dipswitch extends Component {
     }
   }
 
+  toBool(val) {
+    return !!val;
+  }
+
   render() {
     let switches = [];
     const {
@@ -60,7 +64,7 @@ class Dipswitch extends Component {
     const switchWidth = width / switchCount;
 
     iterator(switchCount, i => {
-      const switchState = Math.pow(2, i) & value;
+      const switchState = this.toBool(Math.pow(2, i) & value);
       const singleSwitch = (
         <Switch
           key={i}
