@@ -13,17 +13,30 @@ class Dipswitch extends Component {
     return () => {
       this.onValueChange(index);
       const { onClick } = this.props;
-      if (typeof onClick === "function") {
+      if (onClick) {
         this.props.onClick(index);
       }
     };
   }
 
   onValueChange(index) {
-    const { onValueChange } = this.props;
-    if (typeof onValueChange === "function") {
-      const newVal = this.props.value ^ Math.pow(2, index);
+    const { onValueChange, value } = this.props;
+    if (onValueChange) {
+      const newVal = value ^ Math.pow(2, index);
       onValueChange(newVal);
+    }
+  }
+
+  // Used to determine the order of the switches
+  msbRightIterator(count, fn) {
+    for (let i = 0; i < count; i++) {
+      fn(i);
+    }
+  }
+
+  msbLeftIterator(count, fn) {
+    for (let i = count - 1; i >= 0; i--) {
+      fn(i);
     }
   }
 
@@ -41,7 +54,9 @@ class Dipswitch extends Component {
     } = this.props;
 
     const iterator =
-        mostSignificantBit.toLowerCase() === "right" ? msbRightIterator : msbLeftIterator;
+      mostSignificantBit.toLowerCase() === "right"
+        ? this.msbRightIterator
+        : this.msbLeftIterator;
     const switchWidth = width / switchCount;
 
     iterator(switchCount, i => {
@@ -77,18 +92,6 @@ Dipswitch.PropTypes = {
   channelColor: PropTypes.string,
   bodyColor: PropTypes.string,
   labelColor: PropTypes.string
-};
-
-const msbRightIterator = (count, fn) => {
-  for (let i = 0; i < count; i++) {
-    fn(i);
-  }
-};
-
-const msbLeftIterator = (count, fn) => {
-  for (let i = count - 1; i >= 0; i--) {
-    fn(i);
-  }
 };
 
 export default Dipswitch;
