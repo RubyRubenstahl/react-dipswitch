@@ -16,10 +16,10 @@ class ControlledDipswitch extends Component {
     return(
         <div>
           <Dipswitch
-              switchCount="8"
+              switchCount={8}
               value={this.state.value}
               onValueChange={this.onValueChange}
-              width="100"
+              width={100}
           />
           {this.state.value}
         </div>
